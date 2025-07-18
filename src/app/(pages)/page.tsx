@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     follow: true,
   },
   alternates: {
-    canonical: "https://hm-profi.com",
+    canonical: "https://hm-profi.com/",
     languages: {
       "de": "https://hm-profi.de",
       "en": "https://hm-profi.com",
