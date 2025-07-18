@@ -94,9 +94,9 @@ const Heading = ({
         </svg>
       </div>
       {bpl == 'Your Partner in' ? (
-        <h3 className={Style.subheading}>
+        <h2 className={Style.subheading}>
         {bpl} {bpr && <span>{bpr}</span>}
-      </h3>
+      </h2>
       ) : (
         <p className={Style.subheading}>
         {bpl} {bpr && <span>{bpr}</span>}
