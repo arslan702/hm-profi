@@ -1845,17 +1845,18 @@
             gap: 14px;
 
             p {
-              font-size: 20px;
-              font-weight: 800;
-              font-family: "Montserrat", serif;
-              color: transparent;
-              -webkit-text-stroke: 1px #f95231;
-            }
-
-            h4 {
               font-size: 18px;
               font-weight: 600;
               color: #000000;
+
+              span {
+                font-size: 20px;
+                font-weight: 800;
+                font-family: "Montserrat", sans-serif;
+                color: transparent;
+                -webkit-text-stroke: 1px #f95231;
+                margin-right: 22px;
+              }
             }
           }
         }

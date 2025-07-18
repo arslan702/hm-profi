@@ -647,28 +647,28 @@ const Home = () => {
                 // className="animateElement"
               >
                 <li>
-                  <p>01</p>
-                  <h3>High Production Volumes and Long Service Life</h3>
+                  <p><span>01</span>
+                  High Production Volumes and Long Service Life</p>
                 </li>
 
                 <li>
-                  <p>02</p>
-                  <h3>Consistent Product Quality</h3>
+                  <p><span>02</span>
+                  Consistent Product Quality</p>
                 </li>
 
                 <li>
-                  <p>03</p>
-                  <h3>Maximum Dimensional Accuracy</h3>
+                  <p><span>03</span>
+                  Maximum Dimensional Accuracy</p>
                 </li>
 
                 <li>
-                  <p>04</p>
-                  <h3>Forming At The Limits Of Material Properties</h3>
+                  <p><span>04</span>
+                  Forming At The Limits Of Material Properties</p>
                 </li>
 
                 <li>
-                  <p>05</p>
-                  <h3>Highest Process Reliability</h3>
+                  <p><span>05</span>
+                  Highest Process Reliability</p>
                 </li>
               </ul>
 
