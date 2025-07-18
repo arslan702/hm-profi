@@ -93,9 +93,15 @@ const Heading = ({
           />
         </svg>
       </div>
-      <p className={Style.subheading}>
+      {bpl == 'Your Partner in' ? (
+        <h3 className={Style.subheading}>
+        {bpl} {bpr && <span>{bpr}</span>}
+      </h3>
+      ) : (
+        <p className={Style.subheading}>
         {bpl} {bpr && <span>{bpr}</span>}
       </p>
+      )}
     </div>
   );
 };

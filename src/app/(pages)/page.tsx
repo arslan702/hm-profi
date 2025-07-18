@@ -443,7 +443,7 @@ const Home = () => {
       {/* OUR EXPERTISE */}
       <section className={Style.ourExpertiseSection} id="ourExpertise">
         <div className={Style.center_content}>
-          <div className={Style.content}>
+          <div className={Style.container}>
             <Heading
               text={"OUR EXPERTISE"}
               bpl={"Your Partner in"}
