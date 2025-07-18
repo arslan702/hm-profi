@@ -192,8 +192,9 @@ const Home = () => {
               </div>
               <div
                 className={`${Style.card01}`}
+                role="listitem"
               >
-                <h4>Precision Tools and Design</h4>
+                <h2>Precision Tools and Design</h2>
                 <p>
                   Our expertise in toolmaking combines design and production of
                   high-quality tools for both large and small series production.
@@ -258,7 +259,7 @@ const Home = () => {
               <div
                 className={`${Style.card01}`}
               >
-                <h4>Precision Punches and Bushings</h4>
+                <h2>Precision Punches and Bushings</h2>
                 <p>
                   We provide high-quality tool components for ensuring maximum
                   dimensional stability and excellent surface quality.
@@ -323,7 +324,7 @@ const Home = () => {
               <div
                 className={`${Style.card01}`}
               >
-                <h4>Precision Components</h4>
+                <h2>Precision Components</h2>
                 <p>
                   Advanced technologies produce precise geometric shapes and
                   microtechnological components to meet the highest demands.

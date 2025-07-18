@@ -93,9 +93,9 @@ const Heading = ({
           />
         </svg>
       </div>
-      <h3>
+      <p className={Style.subheading}>
         {bpl} {bpr && <span>{bpr}</span>}
-      </h3>
+      </p>
     </div>
   );
 };

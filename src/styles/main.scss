@@ -58,6 +58,10 @@ li {
   scrollbar-color: $red-color-v2 $black-color-v4;
 }
 
+section h1 {
+  font-size: 2em;
+}
+
 .noSelect {
   -webkit-tap-highlight-color: transparent;
   -webkit-touch-callout: none;

@@ -145,7 +145,7 @@ const Header = () => {
               {isHydrated ? (
               <MyNavLink
                 text={"Our Scope"}
-                link="/our-scope/"
+                link="/our-scope"
                 isIconShow={true}
                 nestedItem={[
                   {
@@ -226,7 +226,7 @@ const Header = () => {
               {isHydrated ? (
               <MyNavLink
                 text={"Applications"}
-                link="/application/"
+                link="/application"
                 isIconShow={true}
                 nestedItem={[
                   {
