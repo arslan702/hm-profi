@@ -1,10 +1,6 @@
 @use "../mixins" as *;
 @use "../_variables" as *;
 
-:global(section h1) {
-  font-size: 2em;
-}
-
 h1 {
   font-size: 2rem; // or whatever size fits your design system
 }
