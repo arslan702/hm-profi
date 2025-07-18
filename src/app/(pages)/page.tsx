@@ -20,14 +20,16 @@ export const metadata: Metadata = {
     canonical: "https://hm-profi.vercel.app/",
     languages: {
       "de": "https://hm-profi.de",
-      "en": "https://hm-profi.com",
+      // "en": "https://hm-profi.com",
+      "en": "https://hm-profi.vercel.app/",
     },
   },
   openGraph: {
     title: "Carbide precision part manufacturing, Tool components for molding",
     description:
       "Custom-made design of Tungsten Carbide, Forming and Cutting inserts as well as dies and bushings made out of HSS or PM Steel according to your drawing",
-    url: "https://hm-profi.com",
+    // url: "https://hm-profi.com",
+    url: "https://hm-profi.vercel.app/",
     type: "website",
   },
 };
