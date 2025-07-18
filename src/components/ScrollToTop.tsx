@@ -1,35 +1,32 @@
 import { useEffect } from "react";
-import { useLocation } from "react-router-dom";
+import { usePathname, useSearchParams } from "next/navigation";
 
-const ScrollHandler = () => {
-  const location = useLocation();
+const ScrollToTop = () => {
+  const pathname = usePathname();
+  const searchParams = useSearchParams();
 
   useEffect(() => {
-    const handleScroll = () => {
-      if (location.hash) {
-        // const element = document.querySelector(location.hash);
+    // Get hash from the URL if present
+    const hash = typeof window !== 'undefined' ? window.location.hash : '';
+    if (hash) {
+      const retryScroll = setInterval(() => {
+        const targetElement = document.querySelector(hash);
+        if (targetElement) {
+          targetElement.scrollIntoView({ behavior: "smooth" });
+          clearInterval(retryScroll);
+        }
+      }, 50);
+    } else {
+      const contentReady = setInterval(() => {
+        if (document.readyState === "complete") {
+          window.scrollTo(0, 0);
+          clearInterval(contentReady);
+        }
+      }, 50);
+    }
+  }, [pathname, searchParams]);
 
-        const retryScroll = setInterval(() => {
-          const targetElement = document.querySelector(location.hash);
-          if (targetElement) {
-            targetElement.scrollIntoView({ behavior: "smooth" });
-            clearInterval(retryScroll);
-          }
-        }, 50);
-      } else {
-        const contentReady = setInterval(() => {
-          if (document.readyState === "complete") {
-            window.scrollTo(0, 0);
-            clearInterval(contentReady);
-          }
-        }, 50);
-      }
-    };
-
-    handleScroll();
-  }, [location]);
-
-  return null; // Component kuch render nahi karega
+  return null;
 };
 
-export default ScrollHandler;
+export default ScrollToTop;
