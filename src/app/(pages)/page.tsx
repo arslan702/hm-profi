@@ -128,7 +128,7 @@ const Home = () => {
               <div
                 className={`${Style.card01}`}
               >
-                <h4>Single-Part Manufacturing</h4>
+                <h2>Single-Part Manufacturing</h2>
                 <p>
                   We produce precise, active elements as bespoke solutions, used
                   in the following manufacturing techniques:
@@ -136,21 +136,21 @@ const Home = () => {
 
                 <ul>
                   <li>
-                    <h4>Stamping Technology:</h4>
+                    <h3>Stamping Technology:</h3>
                     <p>
                       Punches and dies designed for stamping processes that
                       demand the highest precision and reliability.
                     </p>
                   </li>
                   <li>
-                    <h4>Bending and Forming Technology:</h4>
+                    <h3>Bending and Forming Technology:</h3>
                     <p>
                       Specialized materials for demanding forming processes,
                       ensuring maximum durability and performance.
                     </p>
                   </li>
                   <li>
-                    <h4>Plastic Injection Molding Technology:</h4>
+                    <h3>Plastic Injection Molding Technology:</h3>
                     <p>
                       High-quality inserts and cores for precise shaping and
                       maximum longevity.
@@ -192,7 +192,7 @@ const Home = () => {
               </div>
               <div
                 className={`${Style.card01}`}
-                role="listitem"
+                // role="listitem"
               >
                 <h2>Precision Tools and Design</h2>
                 <p>
@@ -202,21 +202,21 @@ const Home = () => {
 
                 <ul>
                   <li>
-                    <h4>Stamping, Bending, and Forming Tools:</h4>
+                    <h3>Stamping, Bending, and Forming Tools:</h3>
                     <p>
                       Precisely manufactured tools to maximize efficiency in
                       series production.
                     </p>
                   </li>
                   <li>
-                    <h4>Forming and Cutting Inserts:</h4>
+                    <h3>Forming and Cutting Inserts:</h3>
                     <p>
                       Durable and precise inserts for demanding cutting and
                       forming processes.
                     </p>
                   </li>
                   <li>
-                    <h4>Plastic Injection Molding Tools:</h4>
+                    <h3>Plastic Injection Molding Tools:</h3>
                     <p>
                       High-quality tools for series production, offering exact
                       shaping and exceptional durability.
@@ -267,21 +267,21 @@ const Home = () => {
 
                 <ul>
                   <li>
-                    <h4>Cutting, Punching, and Drawing Punches:</h4>
+                    <h3>Cutting, Punching, and Drawing Punches:</h3>
                     <p>
                       Individually manufactured contours for precise
                       manufacturing processes.
                     </p>
                   </li>
                   <li>
-                    <h4>Drawing Dies and Bushings:</h4>
+                    <h3>Drawing Dies and Bushings:</h3>
                     <p>
                       Durable dies and robust bushings, optimized for complex
                       forming techniques.
                     </p>
                   </li>
                   <li>
-                    <h4>Cutting Bushings and Plates:</h4>
+                    <h3>Cutting Bushings and Plates:</h3>
                     <p>
                       Efficient solutions for scrap-stop, ensuring long life in
                       cutting and punching processes.
@@ -332,21 +332,21 @@ const Home = () => {
 
                 <ul>
                   <li>
-                    <h4>Complex Geometric Forms:</h4>
+                    <h3>Complex Geometric Forms:</h3>
                     <p>
                       Minimal tolerances ensure exact precision and perfect fit,
                       even for demanding designs.
                     </p>
                   </li>
                   <li>
-                    <h4>Max. Dimensional Accuracy:</h4>
+                    <h3>Max. Dimensional Accuracy:</h3>
                     <p>
                       For applications with highest precision requirements,
                       where even the smallest deviations are unacceptable.
                     </p>
                   </li>
                   <li>
-                    <h4>Microtechnology with Maximum Precision:</h4>
+                    <h3>Microtechnology with Maximum Precision:</h3>
                     <p>
                       Our technologies enable the production of hole diameters
                       as small as Ø 0.04 mm, perfect for tiniest nozzles.
@@ -648,27 +648,27 @@ const Home = () => {
               >
                 <li>
                   <p>01</p>
-                  <h4>High Production Volumes and Long Service Life</h4>
+                  <h3>High Production Volumes and Long Service Life</h3>
                 </li>
 
                 <li>
                   <p>02</p>
-                  <h4>Consistent Product Quality</h4>
+                  <h3>Consistent Product Quality</h3>
                 </li>
 
                 <li>
                   <p>03</p>
-                  <h4>Maximum Dimensional Accuracy</h4>
+                  <h3>Maximum Dimensional Accuracy</h3>
                 </li>
 
                 <li>
                   <p>04</p>
-                  <h4>Forming At The Limits Of Material Properties</h4>
+                  <h3>Forming At The Limits Of Material Properties</h3>
                 </li>
 
                 <li>
                   <p>05</p>
-                  <h4>Highest Process Reliability</h4>
+                  <h3>Highest Process Reliability</h3>
                 </li>
               </ul>
 
