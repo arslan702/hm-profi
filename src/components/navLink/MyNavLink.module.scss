@@ -1,0 +1,208 @@
+@use "../../styles/mixins" as *;
+@use "../../styles/variables" as *;
+
+.anchorLink {
+  @include flex-center;
+  gap: 8px;
+  font-size: 30px;
+  color: $black-color-v4;
+  padding: 14px 18.81px 16px 18.81px;
+  transition: 0.3s;
+
+  span {
+    overflow: hidden;
+    position: relative;
+  }
+
+  span::before,
+  span::after {
+    content: "";
+    width: 0;
+    height: 1px;
+    background-color: #fa4b2e;
+    opacity: 0.7;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    transition: all 0.3s ease;
+  }
+
+  span::after {
+    width: 100%;
+    right: unset;
+    left: 0;
+    background-color: #fa4b2e;
+    transform: translateX(-100%);
+    opacity: 1;
+  }
+
+  &:hover {
+    span {
+      color: $orange-color-v1;
+    }
+
+    span::before,
+    span.active {
+      animation-name: underlineAnimate;
+      animation-duration: 0.3s;
+      animation-timing-function: linear;
+    }
+
+    span::after,
+    span.active {
+      animation-name: underlineAnimate01;
+      animation-delay: 0.3s;
+      animation-duration: 0.3s;
+      animation-timing-function: linear;
+      animation-iteration-count: 1;
+    }
+
+    // Permanent underline after hover
+    span::after {
+      transform: translateX(0%);
+    }
+  }
+
+  // Active state styles
+  &.active {
+    span {
+      color: #fa4b2e;
+    }
+
+    span::after {
+      transform: translateX(0%);
+      opacity: 1;
+    }
+
+    .navArrowLine {
+      stroke: #fa4b2e;
+    }
+  }
+
+  .navArrowIcon {
+    width: 12px;
+    height: 8px;
+    // Standard-Rotation für den Pfeil (entspricht rotate(0deg))
+    // Für animierte Übergänge: transition: transform 0.3s ease-in-out;
+    transform: rotate(0deg); // Default: pointing down
+    transition: transform 0.3s ease-in-out;
+  }
+
+  .navArrowIconActive {
+    transform: rotate(180deg); // When active: pointing up
+  }
+
+  .navArrowLine {
+    stroke: black;
+    stroke-width: 0.78488px; // Wichtig: CSS benötigt Einheiten, also 'px' hinzufügen
+  }
+
+  @keyframes underlineAnimate {
+    to {
+      width: 0%;
+    }
+    from {
+      width: 100%;
+      opacity: 0;
+    }
+  }
+
+  @keyframes underlineAnimate01 {
+    to {
+      transform: translateX(0%);
+    }
+    from {
+      transform: translateX(100%);
+    }
+  }
+
+  @media (max-width: $breakpoint-latop-md) {
+    font-size: 18px;
+  }
+  @media (max-width: $breakpoint-latop-x-md) {
+    font-size: 16px;
+    padding: 12px 14.81px 14px 16.81px;
+  }
+}
+
+.nestedItem {
+  position: absolute;
+  min-width: 280px;
+  background-color: $white-color;
+  border-radius: 8px;
+  box-shadow: 0 0 5px 0 #ecacac57;
+  border: 1px solid #fbd1ca;
+  visibility: hidden;
+  opacity: 0;
+  top: 120%;
+  left: 0px;
+  transition: 0.3s;
+
+  &.active {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  li {
+    a {
+      width: 100%;
+      display: flex;
+      font-size: 20px;
+      padding: 16px;
+      color: $black-color-v4;
+      border-bottom: 1px dashed #ff3700a1;
+
+      &:hover,
+      &.active {
+        background-color: rgb(249 224 222 / 38%);
+      }
+    }
+
+    &:last-child {
+      a {
+        border-bottom: unset;
+      }
+    }
+  }
+
+  @media (max-width: $breakpoint-latop-md) {
+    li {
+      a {
+        font-size: 18px;
+      }
+    }
+  }
+
+  @media (max-width: $breakpoint-latop-x-md) {
+    li {
+      a {
+        font-size: 16px;
+      }
+    }
+  }
+}
+
+// CSS-only dropdown functionality for NoJsDropdown
+.dropdownCheckbox {
+  display: none;
+}
+
+// Show dropdown when checkbox is checked
+.dropdownCheckbox:checked ~ label + .nestedItem {
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+// Rotate arrow when dropdown is open
+.dropdownCheckbox:checked ~ label .navArrowIcon {
+  transform: rotate(180deg) !important;
+}
+
+// Style the label to look like a clickable element
+// :global(label[for^="dropdown-"]) {
+//   cursor: pointer;
+// }
+
+.dropdownLabel {
+  cursor: pointer;
+}

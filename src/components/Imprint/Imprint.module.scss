@@ -1,0 +1,256 @@
+.contactUsModal {
+  width: 100%;
+  height: 100dvh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgb(0 0 0 / 60%);
+  -webkit-backdrop-filter: blur(5px); /* Safari Fix */
+  backdrop-filter: blur(5px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 11;
+  visibility: hidden;
+  opacity: 0;
+  transition: 0.3s;
+
+  &.active {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  .center_content {
+    max-width: 446px;
+    min-height: 561px;
+    width: 90%;
+    border-radius: 17px;
+    background-color: rgba(249, 82, 49, 1);
+    position: relative;
+    padding: 28px 24px 30px 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 22px;
+    overflow: hidden;
+    position: relative;
+    transition: unset;
+
+    &::after {
+      content: "";
+      width: 104.2px;
+      height: 104.2px;
+      position: absolute;
+      top: -8px;
+      left: 16.57px;
+      border-radius: 50%;
+      background-color: rgba(255, 107, 78, 1);
+    }
+    &::before {
+      content: "";
+      width: 104.2px;
+      height: 104.2px;
+      position: absolute;
+      top: -8px;
+      left: -13px;
+      border-radius: 50%;
+      background-color: rgba(255, 99, 68, 1);
+    }
+
+    .shapes01 {
+      width: 104.2px;
+      height: 104.2px;
+      border-radius: 50%;
+      background-color: rgba(255, 99, 68, 1);
+      position: absolute;
+      bottom: -6.2px;
+      right: -19.2px;
+    }
+    .shapes02 {
+      width: 104.2px;
+      height: 104.2px;
+      border-radius: 50%;
+      background-color: rgba(255, 107, 78, 1);
+      position: absolute;
+      bottom: -6.2px;
+      right: -48.77px;
+    }
+
+    .crossIcon {
+      width: 26px;
+      height: 26px;
+      border-radius: 50%;
+      background-color: rgba(255, 255, 255, 1);
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: absolute;
+      top: 11px;
+      right: 10px;
+      cursor: pointer;
+      z-index: 1;
+
+      &:hover {
+        background-color: #000;
+
+        svg {
+          path {
+            fill: #fff;
+          }
+        }
+      }
+    }
+
+    .modalTitle {
+      font-size: 22px;
+      font-weight: 500;
+      color: rgba(255, 255, 255, 1);
+      z-index: 1;
+      display: block; /* Span ist inline, h1 war block */
+    }
+
+    .info {
+      width: 100%;
+      height: 100%;
+      background-color: rgba(255, 255, 255, 1);
+      border-radius: 10px;
+      padding: 28px 20px 28px 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: flex-start;
+      gap: 26px;
+      z-index: 1;
+      overflow: auto;
+
+      .mainHeading {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        gap: 14px;
+
+        svg {
+          width: 36px;
+        }
+
+        .heading {
+          font-size: 26px;
+          font-weight: 700;
+          color: rgba(0, 0, 0, 1);
+          text-transform: uppercase;
+        }
+      }
+
+      ul {
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 18px;
+
+        li {
+          display: flex;
+          justify-content: flex-start;
+          align-items: flex-start;
+          flex-direction: column;
+
+          p,
+          a {
+            font-size: 18px;
+            line-height: 26px;
+            font-weight: 400;
+            color: rgb(0, 0, 0);
+
+            &.highlight {
+              font-weight: 600;
+            }
+          }
+
+          a {
+            font-style: italic;
+          }
+          a:hover {
+            opacity: 0.7;
+          }
+        }
+      }
+    }
+
+    @media (max-width: 1450px) {
+      padding: 18px 20px 24px 20px;
+      .modalTitle {
+        font-size: 18px;
+      }
+      .info {
+        gap: 22px;
+        padding: 28px 20px 34px 20px;
+
+        .heading {
+          font-size: 22px;
+        }
+
+        ul {
+          li {
+            h2 {
+              font-size: 18px;
+              line-height: 28px;
+            }
+            p {
+              font-size: 16px;
+              line-height: 26px;
+            }
+          }
+        }
+      }
+    }
+
+    @media (max-width: 600px) {
+      width: 90%;
+      min-height: unset;
+      gap: 18px;
+      padding: 18px 12px 20px 12px;
+      border-radius: 12px;
+
+      .modalTitle {
+        font-size: 16px;
+      }
+
+      .info {
+        min-height: unset;
+        gap: 18px;
+        padding: 18px;
+        border-radius: 8px;
+
+        .mainHeading {
+          gap: 8px;
+          svg {
+            width: 22px;
+          }
+
+          .heading {
+            font-size: 16px;
+          }
+        }
+
+        ul {
+          gap: 14px;
+          li {
+            gap: 2px;
+            p,
+            a {
+              font-size: 14px;
+              line-height: 24px;
+            }
+            h2 {
+              font-size: 14px;
+              line-height: 24px;
+            }
+          }
+        }
+      }
+    }
+  }
+}

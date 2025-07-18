@@ -1,0 +1,355 @@
+.heroSection {
+  width: 100%;
+  max-width: 1920px;
+  height: 700px; //804px
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow-x: hidden;
+  margin: 0 auto;
+  margin-top: 106px; //146px
+}
+.heroSection .sliders {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+}
+.heroSection .slide01 {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  position: relative;
+  flex-shrink: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 1;
+  transition: 0.3s;
+  transform: scale(1);
+  animation-name: scaleIamge;
+  animation-duration: 6s;
+  animation-timing-function: ease-out;
+  animation-direction: alternate;
+  animation-iteration-count: infinite;
+  animation-play-state: paused;
+  padding-bottom: 151px;
+}
+
+.heroSection .slide01:nth-child(1) {
+  z-index: 5;
+}
+.heroSection .slide01:nth-child(2) {
+  z-index: 4;
+}
+.heroSection .slide01:nth-child(3) {
+  z-index: 3;
+}
+.heroSection .slide01:nth-child(4) {
+  z-index: 2;
+}
+.heroSection .slide01:nth-child(5) {
+  z-index: 1;
+}
+
+.heroSection .slide01.active {
+  animation-play-state: running;
+  z-index: 7;
+}
+
+.heroSection .slide01.hide {
+  opacity: 0;
+  transition: opacity 0.4s;
+}
+.heroSection .slide01.hide .slideContent {
+  transition: 0.5s;
+  opacity: 0;
+}
+.heroSection .slide01.active .slideContent {
+  transition: 0.5s;
+  opacity: 1;
+}
+
+@keyframes scaleIamge {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.05);
+  }
+}
+
+.heroSection .slide01 .slide01_image {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: -1;
+}
+
+.heroSection .slide01 .slide01_image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.heroSection .slide01 .slideContent {
+  min-width: 784px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 31px;
+  // padding: 0 2rem;
+}
+.heroSection .slide01 .slideContent .slideContent_topPart {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 5px;
+}
+.heroSection .slide01 .slideContent .slideContent_topPart h1 {
+  font-size: 72px;
+  font-weight: 300;
+  color: rgba(255, 255, 255, 1);
+  text-transform: uppercase;
+  text-align: center;
+}
+.heroSection .slide01 .slideContent .slideContent_topPart h1 span {
+  font-weight: 700;
+}
+.heroSection .slide01 .slideContent .slideContent_topPart .horizontalLine {
+  width: 468px;
+  height: 1px;
+  background: linear-gradient(
+    349deg,
+    rgb(249 82 49 / 8%),
+    rgba(249, 82, 49, 0.5),
+    rgb(249 82 49 / 8%)
+  );
+}
+.heroSection .slide01 .slideContent .slideContent_topPart p {
+  font-size: 28px;
+  font-weight: 300;
+  color: rgba(255, 255, 255, 1);
+  text-align: center;
+  margin-top: 4px;
+}
+.heroSection .slide01 .slideContent h2 {
+  max-width: 784px;
+  font-size: 28px;
+  font-weight: 600;
+  line-height: 38px;
+  color: rgba(255, 255, 255, 1);
+  text-align: center;
+}
+.heroSection .slide01 .slideContent .btns {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15.83px;
+  margin-top: 10px;
+}
+.heroSection .slide01 .slideContent .btns a {
+  min-width: 216px;
+  height: 54px;
+  background-color: rgba(0, 0, 0, 1);
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.3s;
+  padding: 11px 25px;
+  font-size: 18px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 1);
+  position: relative;
+  text-align: center;
+
+  &:last-child {
+    background-color: rgba(249, 82, 49, 1);
+  }
+
+  &::after,
+  &::before {
+    position: absolute;
+    content: "";
+    width: 0;
+    height: 0;
+    transition: 0.5s;
+    border-radius: 2px;
+  }
+
+  &::after {
+    top: -5px;
+    left: -4px;
+    border-top: 3px solid transparent;
+    border-left: 3px solid transparent;
+  }
+
+  &::before {
+    bottom: -4px;
+    right: -5px;
+    border-bottom: 3px solid transparent;
+    border-right: 3px solid transparent;
+  }
+
+  &:last-child::after {
+    top: -5px;
+    left: -5px;
+  }
+  &:last-child::before {
+    bottom: -4px;
+    right: -4px;
+  }
+
+  &:hover::after,
+  &:hover::before {
+    width: calc(100% + 9px);
+    height: calc(100% + 9px);
+    border-color: #000000;
+  }
+
+  &:last-child:hover::after,
+  &:last-child:hover::before {
+    border-color: rgba(249, 82, 49, 1);
+  }
+
+  &:hover {
+    border-radius: 0;
+  }
+}
+.indicator {
+  position: absolute;
+  bottom: 36px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  z-index: 8;
+}
+.indicator div {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: rgba(181, 179, 178, 1);
+  cursor: pointer;
+  transition: 0.3s;
+}
+.indicator div.active,
+.indicator div:hover {
+  background-color: rgba(249, 82, 49, 1);
+}
+
+@media (max-width: 1500px) {
+  .heroSection {
+    height: 650px;
+    margin-top: 120px;
+  }
+  .heroSection .slide01 .slideContent {
+    .slideContent_topPart {
+      h1 {
+        font-size: 46px;
+      }
+      p {
+        font-size: 18px;
+      }
+    }
+
+    h2 {
+      max-width: 700px;
+      font-size: 20px;
+      line-height: 30px;
+      text-align: center;
+    }
+
+    .btns {
+      a {
+        min-width: 190px;
+        height: 50px;
+        font-size: 16px;
+      }
+    }
+  }
+  .indicator div {
+    width: 10px;
+    height: 10px;
+  }
+}
+
+@media (max-width: 1300px) {
+  .heroSection {
+    .slide01 {
+      .slideContent {
+        h2 {
+          max-width: 490px;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1100px) {
+  .heroSection {
+    height: 430px;
+    margin-top: 82px;
+
+    .slide01 {
+      align-items: center;
+      padding: unset;
+      .slideContent {
+        width: 90%;
+        min-width: unset;
+        gap: 21px;
+
+        .slideContent_topPart {
+          h1 {
+            font-size: 18px;
+          }
+          p {
+            font-size: 14px;
+          }
+          .horizontalLine {
+            width: 90%;
+          }
+        }
+
+        h2 {
+          text-align: center;
+          font-size: 16px;
+          line-height: 26px;
+        }
+        .btns {
+          width: 100%;
+          gap: 8px;
+          a {
+            height: 42px;
+            font-size: 14px;
+            min-width: 136px;
+            max-width: 50%;
+            padding: 11px 16px;
+          }
+        }
+      }
+    }
+  }
+  .indicator {
+    gap: 8px;
+    bottom: 34px;
+
+    div {
+      width: 8px;
+      height: 8px;
+    }
+  }
+}

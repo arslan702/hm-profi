@@ -1,0 +1,2 @@
+# Leitet index.html zur Root-Seite um (verhindert Duplicate Content in SEO)
+/index.html / 301

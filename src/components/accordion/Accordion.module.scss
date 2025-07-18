@@ -1,0 +1,174 @@
+@use "../../styles/mixins" as *;
+@use "../../styles/variables" as *;
+
+.accordion {
+  width: 774.33px;
+  min-height: 128.02px;
+  padding: 37px 20.33px 42.26px 17.08px;
+  background-color: rgba(255, 255, 255, 1);
+  border: 1.31px solid rgba(217, 217, 217, 1);
+  border-radius: 22.24px;
+  border-bottom: 4px solid #f95231;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 24px;
+
+  .content {
+    width: calc(100% - 52px);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+
+    h2 {
+      width: 100%;
+      font-size: 20px;
+      line-height: 39.2px;
+      color: #000000;
+      border-bottom: 0.4px solid #f95231;
+      padding-bottom: 8.76px;
+      font-weight: 400;
+    }
+
+    .bottomContent {
+      display: grid;
+      grid-template-rows: 0fr;
+      transition: grid-template-rows 500ms;
+
+      &.active {
+        grid-template-rows: 1fr;
+      }
+
+      .mainContent {
+        overflow: hidden;
+
+        p {
+          font-size: 18px;
+          line-height: 28px;
+          color: #000000;
+          padding-top: 41px;
+        }
+      }
+    }
+  }
+
+  svg {
+    flex-shrink: 0;
+    margin-top: 14.36px;
+    cursor: pointer;
+    transform-origin: center;
+
+    &:hover {
+      opacity: 0.7;
+      transform: rotate(90deg);
+    }
+  }
+
+  @media (max-width: $breakpoint-latop-md) {
+    flex: 1 1 calc(45%);
+
+    .content {
+      h1 {
+        font-size: 18px;
+        line-height: 32px;
+      }
+
+      .bottomContent {
+        .mainContent {
+          p {
+            font-size: 16px;
+            line-height: 26px;
+          }
+        }
+      }
+    }
+  }
+
+  @media (max-width: 1450px) {
+    .content {
+      h1 {
+        font-size: 16px;
+        line-height: 26px;
+      }
+    }
+  }
+  @media (max-width: $breakpoint-mobile-md) {
+    width: 100%;
+    flex: unset;
+    min-height: 110.02px;
+    padding: 20px 14.33px 20.26px 14.08px;
+    gap: 6px;
+    border-bottom: 3px solid #f95231;
+    justify-content: space-between;
+
+    .content {
+      width: calc(100% - 32px);
+      h1 {
+        font-size: 14px;
+        line-height: 24px;
+      }
+
+      .bottomContent {
+        .mainContent {
+          p {
+            font-size: 14px;
+            line-height: 24px;
+            padding-top: 24px;
+          }
+        }
+      }
+    }
+
+    svg {
+      width: 22px;
+    }
+  }
+}
+
+// CSS-only accordion functionality for NoJs accordion
+.accordionCheckbox {
+  display: none;
+}
+
+// Show accordion content when checkbox is checked
+.accordionCheckbox:checked ~ .content .bottomContent {
+  grid-template-rows: 1fr !important;
+}
+
+// Rotate icon when accordion is open
+.accordionCheckbox:checked ~ .iconLabel svg {
+  transform: rotate(45deg) !important;
+}
+
+// Style the trigger label to look like the original heading
+.accordionTrigger {
+  cursor: pointer;
+  display: block;
+  
+  h2 {
+    cursor: pointer;
+  }
+}
+
+// Style the icon label
+.iconLabel {
+  flex-shrink: 0;
+  margin-top: 14.36px;
+  cursor: pointer;
+  transform-origin: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &:hover {
+    opacity: 0.7;
+  }
+
+  svg {
+    transition: transform 0.3s ease;
+  }
+
+  @media (max-width: $breakpoint-mobile-md) {
+    width: 22px;
+  }
+}

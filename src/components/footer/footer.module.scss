@@ -1,0 +1,482 @@
+@use "../../styles/mixins" as *;
+@use "../../styles/variables" as *;
+
+.footer {
+  width: 100%;
+  @include flex-center;
+  padding-top: 119px;
+  background-color: #151314;
+  border-radius: 30px 30px 0 0;
+
+  .center_content {
+    width: 1681px;
+    @include flex-center;
+    flex-direction: column;
+    gap: 20px;
+
+    .topPart {
+      width: 100%;
+      @include flex-center;
+      justify-content: space-between;
+      gap: 20px;
+      align-items: flex-start;
+
+      .leftSide {
+        @include flex-center;
+        justify-content: flex-start;
+        align-items: flex-start;
+        gap: 30px;
+        flex-direction: column;
+
+        h1 {
+          font-size: 36px;
+          font-weight: 700;
+          color: #ffffff;
+
+          span {
+            color: #f95231;
+          }
+        }
+
+        p {
+          font-size: 20px;
+          line-height: 30px;
+          font-family: "Open Sans", serif;
+          font-weight: 400;
+          color: #ffffff;
+        }
+      }
+
+      .rightSide {
+        width: 1110px;
+        @include flex-center;
+        flex-direction: column;
+
+        .topPart {
+          width: 100%;
+          @include flex-center;
+          justify-content: space-between;
+          gap: 116px;
+          padding-bottom: 34px;
+          border-bottom: 0.3px solid #a6a1a14f;
+
+          h1 {
+            font-size: 26px;
+            font-weight: 700;
+            color: #ffffff;
+            text-transform: uppercase;
+          }
+
+          .content {
+            @include flex-center;
+            gap: 81px;
+
+            a {
+              @include flex-center;
+              gap: 13px;
+              transition: 0.3s;
+
+              span {
+                font-size: 26px;
+                font-weight: 600;
+                color: #f95231;
+                white-space: nowrap; /* Safari + alle anderen Browser */              
+              }
+              &:hover {
+                opacity: 0.8;
+              }
+            }
+          }
+        }
+
+        .bottomPart {
+          width: 100%;
+          @include flex-center;
+          justify-content: space-between;
+          padding-top: 28px;
+          margin: 0;
+
+          .col01 {
+            @include flex-center;
+            flex-direction: column;
+            gap: 32.19px;
+            align-items: flex-start;
+
+            h2 {
+              font-size: 20.23px;
+              font-weight: 700;
+              color: #ffffff;
+            }
+
+            p {
+              text-align: left !important;
+            }
+
+            .items {
+              @include flex-center;
+              gap: 39.42px;
+              flex-direction: row;
+
+              div {
+                @include flex-center;
+                flex-direction: column;
+                gap: 18px;
+                align-items: flex-start;
+
+                a {
+                  font-size: 18px;
+                  font-weight: 400;
+                  color: #ffffff;
+                  position: relative;
+
+                  &::before {
+                    content: "";
+                    width: 0;
+                    height: 1px;
+                    background-color: #fff;
+                    position: absolute;
+                    left: 0;
+                    bottom: -4px;
+                  }
+
+                  &:hover::before {
+                    width: 100%;
+                    animation-name: textUnderlineAnimation;
+                    animation-duration: 0.3s;
+                    animation-timing-function: linear;
+                  }
+
+                  @keyframes textUnderlineAnimation {
+                    0% {
+                      width: 0%;
+                    }
+                    100% {
+                      width: 100%;
+                    }
+                  }
+                }
+              }
+            }
+
+            div {
+              @include flex-center;
+              flex-direction: column;
+              gap: 18px;
+              align-items: flex-start;
+
+              a,
+              .additonalLink {
+                font-size: 18px;
+                line-height: 18px;
+                font-weight: 400;
+                color: #ffffff;
+                position: relative;
+                cursor: pointer;
+
+                &::before {
+                  content: "";
+                  width: 0;
+                  height: 1px;
+                  background-color: #fff;
+                  position: absolute;
+                  left: 0;
+                  bottom: -4px;
+                }
+
+                &:hover::before {
+                  width: 100%;
+                  animation-name: textUnderlineAnimation;
+                  animation-duration: 0.3s;
+                  animation-timing-function: linear;
+                }
+
+                @keyframes textUnderlineAnimation {
+                  0% {
+                    width: 0%;
+                  }
+                  100% {
+                    width: 100%;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .bottomPart {
+      width: 100%;
+      @include flex-center;
+      padding: 56px 0;
+      margin-top: 63px;
+
+      p {
+        font-size: 18px;
+        line-height: 28px;
+        color: #ffffff;
+        @include flex-center;
+        gap: 5px;
+      }
+    }
+  }
+
+  @media (max-width: $breakpoint-latop) {
+    .center_content {
+      width: 90%;
+    }
+  }
+  @media (max-width: $breakpoint-latop-md) {
+    .center_content {
+      .topPart {
+        .leftSide {
+          h1 {
+            font-size: 34px;
+          }
+          p {
+            font-size: 18px;
+            line-height: 28px;
+          }
+        }
+        .rightSide {
+          .topPart {
+            h1 {
+              font-size: 24px;
+            }
+
+            .content {
+              a {
+                img {
+                  width: 40px;
+                }
+                span {
+                  font-size: 24px;
+                }
+              }
+            }
+          }
+          .bottomPart {
+            .col01 {
+              h2 {
+                font-size: 18.23px;
+              }
+              .items {
+                div {
+                  a,
+                  .additonalLink {
+                    font-size: 16px;
+                    line-height: 16px;
+                  }
+                }
+              }
+              div {
+                a,
+                .additonalLink {
+                  font-size: 16px;
+                  line-height: 16px;
+                }
+              }
+              p {
+                font-size: 16px;
+                line-height: 26px;
+              }
+            }
+          }
+        }
+      }
+      .bottomPart {
+        p {
+          font-size: 16px;
+          line-height: 26px;
+        }
+      }
+    }
+  }
+  @media (max-width: $breakpoint-latop-x-md) {
+    padding-top: 74px;
+    .center_content {
+      .topPart {
+        .leftSide {
+          gap: 26px;
+          flex-shrink: 0;
+          h1 {
+            font-size: 26px;
+          }
+          p {
+            font-size: 14px;
+            line-height: 24px;
+          }
+        }
+        .rightSide {
+          width: calc(100% - 420px);
+          .topPart {
+            gap: 25px;
+            padding-bottom: 24px;
+
+            h1 {
+              font-size: 18px;
+            }
+            .content {
+              a {
+                span {
+                  font-size: 18px;
+                }
+                img {
+                  width: 32px;
+                }
+              }
+            }
+          }
+          .bottomPart {
+            padding-top: 24px;
+            .col01 {
+              gap: 26px;
+              h2 {
+                font-size: 16px;
+              }
+              .items {
+                gap: 30px;
+                div {
+                  a,
+                  .additonalLink {
+                    font-size: 14px;
+                    line-height: 14px;
+                  }
+                }
+              }
+              div {
+                a,
+                .additonalLink {
+                  font-size: 14px;
+                  line-height: 14px;
+                }
+              }
+
+              p {
+                font-size: 14px;
+              }
+            }
+          }
+        }
+      }
+      .bottomPart {
+        padding: 30px 0;
+        margin-top: 30px;
+        p {
+          font-size: 14px;
+          line-height: 24px;
+        }
+      }
+    }
+  }
+
+  @media (max-width: $breakpoint-tablet) {
+    .center_content {
+      .topPart {
+        flex-direction: column;
+        gap: 34px;
+
+        .leftSide {
+          width: 100%;
+
+          p {
+            br {
+              display: none;
+            }
+          }
+        }
+
+        .rightSide {
+          width: 100%;
+
+          .topPart {
+            flex-direction: row;
+            flex-wrap: wrap;
+            .content {
+              flex-wrap: wrap;
+              gap: 40px;
+            }
+          }
+        }
+      }
+      .bottomPart {
+        flex-wrap: wrap;
+        margin-top: 0px;
+      }
+    }
+  }
+
+  @media (max-width: $breakpoint-mobile) {
+    border-radius: 12px 12px 0 0;
+    padding-top: 52px;
+    .center_content {
+      gap: 0;
+      .topPart {
+        .leftSide {
+          gap: 22px;
+          h1 {
+            font-size: 22px;
+          }
+        }
+        .rightSide {
+          .topPart {
+            border: unset;
+            font-size: 16px;
+            padding-bottom: 17px;
+            gap: 18px;
+            h1 {
+              font-size: 16px;
+            }
+
+            .content {
+              justify-content: flex-start;
+              gap: 18px;
+
+              a {
+                img {
+                  width: 22px;
+                }
+                span {
+                  font-size: 14px;
+                }
+              }
+            }
+          }
+
+          .bottomPart {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 28px;
+            padding: 17px 0 26px 0;
+            .col01 {
+              gap: 18px;
+
+              .items {
+                div {
+                  gap: 16px;
+                }
+              }
+
+              div {
+                gap: 16px;
+              }
+            }
+          }
+        }
+      }
+
+      .bottomPart {
+        padding: 26px 0 30px;
+        p {
+          text-align: center;
+          align-items: flex-start;
+          gap: 0;
+
+          img {
+            margin-top: 4px;
+          }
+        }
+      }
+    }
+  }
+}

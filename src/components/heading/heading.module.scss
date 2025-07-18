@@ -1,0 +1,77 @@
+@use "../../styles/mixins" as *;
+@use "../../styles/variables" as *;
+
+.heading {
+  width: 100%;
+  @include flex-center;
+  flex-direction: column;
+  gap: 18px;
+
+  .topPart {
+    @include flex-center;
+    align-items: flex-start;
+    gap: 30.47px;
+
+    // svg {
+    //   width: 50.47px;
+    // }
+
+    h1 {
+      font-size: 35px;
+      font-weight: 700;
+      color: #000000;
+      text-align: center;
+      span {
+        color: #f95231;
+      }
+    }
+  }
+
+  h3 {
+    font-size: 18px;
+    font-weight: 600;
+    color: #000000;
+    text-align: center;
+    span {
+      color: #f95231;
+    }
+  }
+
+  @media (max-width: $breakpoint-latop-x-md) {
+    gap: 6px;
+    .topPart {
+      align-items: center;
+      svg {
+        width: 38px;
+      }
+      h1 {
+        font-size: 26px;
+      }
+    }
+
+    h3 {
+      font-size: 14px;
+    }
+  }
+  @media (max-width: $breakpoint-mobile) {
+    font-size: 14px;
+    gap: 8px;
+    padding: 0 1rem;
+
+    .topPart {
+      gap: 12px;
+      align-items: flex-start;
+
+      h1 {
+        font-size: 18px;
+      }
+
+      svg {
+        height: 19.36px;
+      }
+    }
+    h3 {
+      font-size: 14px;
+    }
+  }
+}

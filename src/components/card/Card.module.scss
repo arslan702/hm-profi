@@ -1,0 +1,119 @@
+@use "../../styles/mixins" as *;
+@use "../../styles/variables" as *;
+
+.card {
+  width: 536px;
+  height: 402px;
+  border-radius: 30.34px;
+  position: relative;
+  overflow: hidden;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: 0.3s;
+
+    &:hover {
+      filter: brightness(0.5);
+      transform: scale(1.02);
+    }
+  }
+
+  .tag {
+    width: 262.85px;
+    min-height: 72.15px;
+    border-radius: 30.34px 30.34px 20px 20px;
+    background-color: #fff;
+    z-index: 1;
+    position: absolute;
+    bottom: -19.33px;
+    left: 50%;
+    transform: translateX(-50%);
+    @include flex-center;
+
+    h1 {
+      font-size: 20px;
+      font-weight: 700;
+      color: #000000;
+    }
+
+    .brLeftTop {
+      position: absolute;
+      bottom: 19px;
+      left: -23.7px;
+      -webkit-transform: rotate(180deg);
+      -ms-transform: rotate(180deg);
+      transform: rotate(180deg);
+      line-height: 1;
+
+      svg {
+        width: 24px;
+        height: 24px;
+      }
+    }
+
+    .brRightBottom {
+      position: absolute;
+      bottom: 17px;
+      right: -24px;
+      -webkit-transform: rotate(180deg);
+      -ms-transform: rotate(180deg);
+      transform: rotate(270deg);
+      line-height: 1;
+
+      svg {
+        width: 24px;
+        height: 24px;
+      }
+    }
+  }
+
+  @media (max-width: $breakpoint-latop) {
+    flex: calc(100% / 3);
+  }
+  @media (max-width: $breakpoint-latop-md) {
+    .tag {
+      h1 {
+        font-size: 18px;
+      }
+    }
+  }
+  @media (max-width: $breakpoint-latop-x-md) {
+    height: 310px;
+    .tag {
+      width: 200px;
+      min-height: 60px;
+      .brLeftTop {
+        left: -21.7px;
+      }
+      .brRightBottom {
+        right: -23px;
+      }
+
+      h1 {
+        font-size: 16px;
+      }
+    }
+  }
+  @media (max-width: $breakpoint-mobile) {
+    width: 100%;
+    flex: unset;
+    height: 250px;
+    .tag {
+      width: 170px;
+      min-height: 62px;
+      h1 {
+        font-size: 14px;
+        margin-bottom: 1rem;
+      }
+      .brLeftTop {
+        left: -22.7px;
+      }
+    }
+  }
+}

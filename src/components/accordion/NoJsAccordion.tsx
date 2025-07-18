@@ -1,0 +1,46 @@
+import Style from "./Accordion.module.scss";
+
+const NoJsAccordion = ({
+  heading,
+  paragraph,
+}: {
+  heading: string;
+  paragraph: string;
+}) => {
+  const uniqueId = `accordion-${Math.random().toString(36).substr(2, 9)}`;
+
+  return (
+    <div className={Style.accordion}>
+      <input type="checkbox" id={uniqueId} className={Style.accordionCheckbox} />
+      
+      <div className={Style.content}>
+        <label htmlFor={uniqueId} className={Style.accordionTrigger}>
+          <h2>{heading}</h2>
+        </label>
+
+        <div className={Style.bottomContent}>
+          <div className={Style.mainContent}>
+            <p>{paragraph}</p>
+          </div>
+        </div>
+      </div>
+
+      <label htmlFor={uniqueId} className={Style.iconLabel}>
+        <svg
+          width="27"
+          height="27"
+          viewBox="0 0 27 27"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M13.125 0C14.3281 0 15.4902 0.154948 16.6113 0.464844C17.7324 0.77474 18.776 1.2168 19.7422 1.79102C20.7083 2.36523 21.5924 3.04883 22.3945 3.8418C23.1966 4.63477 23.8802 5.51888 24.4453 6.49414C25.0104 7.4694 25.4525 8.51758 25.7715 9.63867C26.0905 10.7598 26.25 11.9219 26.25 13.125C26.25 14.3281 26.0951 15.4902 25.7852 16.6113C25.4753 17.7324 25.0332 18.776 24.459 19.7422C23.8848 20.7083 23.2012 21.5924 22.4082 22.3945C21.6152 23.1966 20.7311 23.8802 19.7559 24.4453C18.7806 25.0104 17.7324 25.4525 16.6113 25.7715C15.4902 26.0905 14.3281 26.25 13.125 26.25C11.9219 26.25 10.7598 26.0951 9.63867 25.7852C8.51758 25.4753 7.47396 25.0332 6.50781 24.459C5.54167 23.8848 4.65755 23.2012 3.85547 22.4082C3.05339 21.6152 2.36979 20.7311 1.80469 19.7559C1.23958 18.7806 0.797526 17.737 0.478516 16.625C0.159505 15.513 0 14.3464 0 13.125C0 11.9219 0.154948 10.7598 0.464844 9.63867C0.77474 8.51758 1.2168 7.47396 1.79102 6.50781C2.36523 5.54167 3.04883 4.65755 3.8418 3.85547C4.63477 3.05339 5.51888 2.36979 6.49414 1.80469C7.4694 1.23958 8.51302 0.797526 9.625 0.478516C10.737 0.159505 11.9036 0 13.125 0ZM21 12.25H14V5.25H12.25V12.25H5.25V14H12.25V21H14V14H21V12.25Z"
+            fill="#F24822"
+          />
+        </svg>
+      </label>
+    </div>
+  );
+};
+
+export default NoJsAccordion; 
